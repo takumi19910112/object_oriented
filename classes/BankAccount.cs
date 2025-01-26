@@ -51,7 +51,22 @@ public class BankAccount
 	private static int s_accountNumberSeed = 1234567890;
     public string Number { get; }
     public string Owner { get; set; }
-    public decimal Balance { get; }
+    public decimal Balance
+	/*
+	元々はBalance プロパティは、単純に値を保持するだけのプロパティだった
+	*/
+	{
+		get
+		{
+			decimal balance = 0;
+			foreach (var item in _allTransactions)
+			{
+				balance += item.Amount;
+			}
+
+			return balance;
+		}
+	}
 
 	/*
 	コンストラクタ：BankAccountオブジェクト作成時に呼び出され、Owner(所有者名)とBalance(初期残高)を初期化する
@@ -72,6 +87,9 @@ public class BankAccount
 		Number = s_accountNumberSeed.ToString();
 		s_accountNumberSeed++;
 	}
+	// List<Transaction> は 「Transaction オブジェクト」のリスト
+	// _ で始まる名前は、慣習的にプライベートなフィールドであることを示すためによく使われる
+	private List<Transaction> _allTransactions = new List<Transaction>();
     // 預金をするためのクラス
     public void MakeDeposit(decimal amount, DateTime date, string note)
     {
