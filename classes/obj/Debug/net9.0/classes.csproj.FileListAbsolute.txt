@@ -1,0 +1,15 @@
+/Users/tc-user/Desktop/SA/object_oriented/classes/bin/Debug/net9.0/classes
+/Users/tc-user/Desktop/SA/object_oriented/classes/bin/Debug/net9.0/classes.deps.json
+/Users/tc-user/Desktop/SA/object_oriented/classes/bin/Debug/net9.0/classes.runtimeconfig.json
+/Users/tc-user/Desktop/SA/object_oriented/classes/bin/Debug/net9.0/classes.dll
+/Users/tc-user/Desktop/SA/object_oriented/classes/bin/Debug/net9.0/classes.pdb
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.AssemblyInfoInputs.cache
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.AssemblyInfo.cs
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.csproj.CoreCompileInputs.cache
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.sourcelink.json
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.dll
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/refint/classes.dll
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.pdb
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/classes.genruntimeconfig.cache
+/Users/tc-user/Desktop/SA/object_oriented/classes/obj/Debug/net9.0/ref/classes.dll
