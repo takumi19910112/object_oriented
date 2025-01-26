@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tc-user/Desktop/SA/classes/classes.csproj": {}
+    "/Users/tc-user/Desktop/SA/object_oriented/classes/classes.csproj": {}
   },
   "projects": {
-    "/Users/tc-user/Desktop/SA/classes/classes.csproj": {
+    "/Users/tc-user/Desktop/SA/object_oriented/classes/classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tc-user/Desktop/SA/classes/classes.csproj",
+        "projectUniqueName": "/Users/tc-user/Desktop/SA/object_oriented/classes/classes.csproj",
         "projectName": "classes",
-        "projectPath": "/Users/tc-user/Desktop/SA/classes/classes.csproj",
+        "projectPath": "/Users/tc-user/Desktop/SA/object_oriented/classes/classes.csproj",
         "packagesPath": "/Users/tc-user/.nuget/packages/",
-        "outputPath": "/Users/tc-user/Desktop/SA/classes/obj/",
+        "outputPath": "/Users/tc-user/Desktop/SA/object_oriented/classes/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tc-user/.nuget/NuGet/NuGet.Config"
