@@ -1,5 +1,8 @@
 namespace Classes;
 
+/*
+預金と引き出しのトランザクションを表すクラス
+*/
 public class Transaction
 {
     public decimal Amount { get; }
