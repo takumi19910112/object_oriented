@@ -74,3 +74,27 @@ public class BankAccount
 ```csharp
 var account = new BankAccount("yamasaka", 1000);
 ```
+
+### コンストラクタ
+- オブジェクトの初期化を行うメソッド
+- オブジェクトが作成されるときに自動的に呼び出される
+- オブジェクトの属性を設定するために使用される
+- コンストラクタは、クラス名と同じ名前のメソッドである
+
+```csharp
+public class BankAccount
+{
+    public BankAccount(string name, decimal initialBalance)
+    {
+    }
+}
+```
+
+### C#のスコープ
+C# のコンパイラは、変数名を見つけると、以下の順番でスコープを検索する
+
+1. 最も内側のスコープ（ブロック内）
+2. その外側のスコープ（メソッド内）
+3. さらに外側のスコープ（クラス内）
+4. さらに外側のスコープ（名前空間内）
+5. 最も外側のスコープ（プログラム内）
