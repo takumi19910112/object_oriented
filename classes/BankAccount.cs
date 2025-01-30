@@ -75,27 +75,68 @@ public class BankAccount
 	新しい山田さんのオブジェクトを作成するときに、コンストラクタを呼び出して、そのオブジェクトには名前と残高が存在することを保証する。
 	コンストラクタの名前は、クラス名と同じである。
 	コンストラクタに引数を渡すことで、オブジェクトのメンバに値を設定することができる
+	「this」は、オブジェクト自身を参照するためのキーワード
+	つまり、this.Owner = name; は、オブジェクト自身のOwnerにnameを設定するという意味。
+	「このオブジェクトの Owner プロパティに、引数 name の値を設定する」という意味
+	this は名前の衝突を避けたり、明示的にオブジェクトのプロパティであることを示すために使用される
+	例：
+	BankAccount account = new BankAccount("yamasaka", 1000);
+	この場合、コンストラクタの引数 name は "yamasaka" であり、Owner は "yamasaka" に設定される。
+	プロパティに値を設定するということは、そのプロパティの set アクセサーを呼び出すことと同じ
 	*/
 	public BankAccount(string name, decimal initialBalance)
 	{
-		/*
-		thisをつけることで、明示的にオブジェクトのメンバ（属性、メソッド）であることを示す
-		Numberは衝突しないので、thisをつける必要はない。（つけてもいい）
-		*/
-		this.Owner = name;
-		this.Balance = initialBalance;
 		Number = s_accountNumberSeed.ToString();
 		s_accountNumberSeed++;
+
+		Owner = name;
+		MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
 	}
 	// List<Transaction> は 「Transaction オブジェクト」のリスト
 	// _ で始まる名前は、慣習的にプライベートなフィールドであることを示すためによく使われる
 	private List<Transaction> _allTransactions = new List<Transaction>();
-    // 預金をするためのクラス
+    // 預金をするためのメソッド
     public void MakeDeposit(decimal amount, DateTime date, string note)
-    {
-    }
+	{
+		if (amount <= 0)
+		{
+			// 引数が0以下の場合、例外をスローする
+			throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
+		}
+		// デポジット、つまり預金をするためのTransactionオブジェクトを作成する
+		// 引数はコンストラクタで定義したもの
+		var deposit = new Transaction(amount, date, note);
+		// 作成したTransactionオブジェクトを_allTransactionsに追加する
+		_allTransactions.Add(deposit);
+	}
 
-    public void MakeWithdrawal(decimal amount, DateTime date, string note)
-    {
-    }
+	/*
+	引き出しをするためのメソッド
+	*/
+	public void MakeWithdrawal(decimal amount, DateTime date, string note)
+	{
+		/*
+		引数が0以下の場合、例外をスローする
+		*/
+		if (amount <= 0)
+		{
+			throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
+		}
+		/*
+		残高が引き出し額より少ない場合、例外をスローする
+		*/
+		if (Balance - amount < 0)
+		{
+			throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+		}
+		/*
+		引き出しをするためのTransactionオブジェクトを作成する
+		*/
+		var withdrawal = new Transaction(-amount, date, note);
+		/*
+		作成したTransactionオブジェクトを_allTransactionsに追加する
+		*/
+		_allTransactions.Add(withdrawal);
+	}
 }
+
